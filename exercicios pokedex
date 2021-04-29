@@ -1,0 +1,43 @@
+1) Qual o ID do pokemon Lucario?
+id: 448, SELECT * FROM `pokedex` WHERE nome = 'Lucario'
+
+2) Qual a média de altura dos pokemons que são lendarios?
+avg: 1.0000, SELECT avg(altura) FROM `pokedex` WHERE altura = lendario
+
+3) Quais pokemons são mais pesados pela média: os dos tipos rock ou do tipo stell?
+tipo rock: 1052.6429 SELECT avg(peso) from pokedex WHERE tipo2 = 'pedra'
+tipo stell: 1888.4167 SELECT avg(peso) from pokedex WHERE tipo1 = 'aço'
+
+
+
+4) Traduzir os tipos dos pokemons.
+UPDATE pokedex SET tipo1 = 'nome em pt' WHERE tipo1 = 'nome em eng';
+UPDATE pokedex SET tipo2 = 'nome em pt' WHERE tipo2 = 'nome em eng';
+
+
+5) Utilizando o site https://serebii.net/pokedex-swsh/ encontre os pokemon com os IDs 80, 122, 149 e insira-os na tabela.
+id80: INSERT INTO pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (80,'Slowbro',49,49,1.6,45,45,'AGUA','psiquico',78.5,1,0);
+id122:INSERT INTO pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (122,'Mr. Mime',49,49,1.3,45,45,'psiquico','fada',54.5,1,0);
+id149:INSERT INTO pokedex(pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario) VALUES (149,'Dragonite',49,49,2.2 ,45,45,'dragao','voador',210.0,1,0);
+
+
+
+6) Qual tipo de pokemon possui mais attack em média.
+dragao 	103.2593: SELECT avg(attack) from pokedex where tipo1 = 'dragao' // fiz isso para todos os tipos de pokemons e vi qual é o mais pesado
+
+
+7) Qual geração de pokemons é mais pesada, em média?
+aço 1888.4167:SELECT avg(peso) from pokedex where tipo1 = 'aço' // fiz isso para todos os tipos de pokemons e vi qual é o mais pesado
+
+
+8) A geração três possui quantos pokemons?
+135 pokemons : select count(*) from pokedex where generation = '3'
+
+
+
+
+SELECT * FROM tabela
+SELECT AVG(*) FROM tabela WHERE 1
+SELECT COUNT(*) FROM tabela WHERE 1
+INSERT INTO tabela(coluna, coluna2) VALUES (valor, valor)
+UPDATE tabela SET coluna = valor WHERE 1
