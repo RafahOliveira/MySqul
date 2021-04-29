@@ -1,3 +1,1 @@
-# MySqul
-exercicios de banco de dados com pokedex
-pokedex no MySql
+# Pokedex e exercicios no MySql
